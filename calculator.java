@@ -11,6 +11,7 @@ public class calculator{
         int second = sc.nextInt();
         System.out.println("Enter operation to perform (+,-,*,/,%)");
         char ch = sc.next().charAt(0);
+        sc.close();
         switch (ch) {
             case '+':
                 System.out.println(first + second);
