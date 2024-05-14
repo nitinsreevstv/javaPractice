@@ -7,7 +7,7 @@ public class calculator{
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter First Number");
         int first = sc.nextInt();
-        System.out.println("Enter First Number");
+        System.out.println("Enter Second Number");
         int second = sc.nextInt();
         System.out.println("Enter operation to perform (+,-,*,/,%)");
         char ch = sc.next().charAt(0);
