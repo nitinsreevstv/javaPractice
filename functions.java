@@ -3,6 +3,7 @@ package javaPractice;
 import java.util.Scanner;
 
 public class functions{
+
     public static boolean isPrime(int n){
         boolean isPrime = true;
         for(int i = 2; i < n; i++){
@@ -13,12 +14,22 @@ public class functions{
         }
         return isPrime;
     }
+    public static void primeRange(int n){
+        for(int i = 2; i <= n; i++){
+            if(isPrime(i)){
+                System.out.println(i);
+            }
+        }
+    }
 
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Number");
         int n = sc.nextInt();
         
-        System.out.println(isPrime(n) ? "The Number is Prime" : "The Number is not prime");
+        // System.out.println(isPrime(n) ? "The Number is Prime" : "The Number is not prime");
+
+        primeRange(n);
 
 
     }
