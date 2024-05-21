@@ -56,6 +56,22 @@ public class arrayPractice{
         }
         System.out.println("Total pairs are :- "+  count);
     }
+    public static int maxSum(int arr[]){
+        int maxSum = Integer.MIN_VALUE;
+        for(int i = 0; i < arr.length; i++){
+            
+            for(int j = i; j < arr.length; j++){
+                int curSum = 0;
+                for(int k = i; k <= j; k++){
+                    curSum += arr[k];
+                }
+                if(curSum>maxSum){
+                    maxSum = curSum;
+                }
+            }
+        }
+        return maxSum;
+    }
     public static void main(String args[]){
         System.out.print("Enter the length of array");
         Scanner sc = new Scanner(System.in);
@@ -74,5 +90,6 @@ public class arrayPractice{
         int key = sc.nextInt();
         System.out.println("The " + key + " is found at " + binarySearch(arr,key) + " place");
         printPairs(arr);
+        System.out.println("Maximum sum is " + maxSum(arr));
     }
 }
