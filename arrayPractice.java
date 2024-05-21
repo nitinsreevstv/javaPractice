@@ -44,7 +44,17 @@ public class arrayPractice{
             }
         }
         return -1;
-
+    }
+    public static void printPairs(int arr[]){
+        int count = 0;
+        for(int i = 0; i < arr.length; i++){
+            for(int j = i+1; j < arr.length; j++){
+                System.out.print("(" + arr[i] + "," + arr[j] + ") ");
+                count++;
+            }
+            System.out.println();
+        }
+        System.out.println("Total pairs are :- "+  count);
     }
     public static void main(String args[]){
         System.out.print("Enter the length of array");
@@ -63,5 +73,6 @@ public class arrayPractice{
         System.out.println("Enter the value you want to search");
         int key = sc.nextInt();
         System.out.println("The " + key + " is found at " + binarySearch(arr,key) + " place");
+        printPairs(arr);
     }
 }
