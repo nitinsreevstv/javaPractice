@@ -72,6 +72,18 @@ public class arrayPractice{
         }
         return maxSum;
     }
+    public static int kadanes(int arr[]){
+        int cs = 0;
+        int ms = Integer.MIN_VALUE;
+        for(int i = 0; i < arr.length; i++){
+            cs += arr[i];
+            if(cs < 0){
+                cs = 0;
+            }
+            ms = Math.max(cs, ms);
+        }
+        return ms;
+    }
     public static void main(String args[]){
         System.out.print("Enter the length of array");
         Scanner sc = new Scanner(System.in);
@@ -81,7 +93,6 @@ public class arrayPractice{
             System.out.println("Enter the Number for "+ (i + 1) + " index");
             arr[i] = sc.nextInt();
         }
-        
         printArr(arr);
         reverse(arr);
         printArr(arr);
@@ -91,5 +102,6 @@ public class arrayPractice{
         System.out.println("The " + key + " is found at " + binarySearch(arr,key) + " place");
         printPairs(arr);
         System.out.println("Maximum sum is " + maxSum(arr));
+        System.out.println("Maximum sum with kadanes algo is " + kadanes(arr));
     }
 }
