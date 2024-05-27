@@ -84,6 +84,19 @@ public class arrayPractice{
         }
         return ms;
     }
+    public static int buyAndSell(int arr[]){
+        int buyPrice = Integer.MAX_VALUE;
+        int maxProfit = 0;
+        for(int i = 0; i < arr.length; i++){
+            if(buyPrice < arr[i]){
+                int profit = arr[i] - buyPrice;
+                maxProfit = Math.max(profit, maxProfit);
+            }else{
+                buyPrice = arr[i];
+            }
+        }
+        return maxProfit;
+    }
     public static void main(String args[]){
         System.out.print("Enter the length of array");
         Scanner sc = new Scanner(System.in);
@@ -103,5 +116,6 @@ public class arrayPractice{
         printPairs(arr);
         System.out.println("Maximum sum is " + maxSum(arr));
         System.out.println("Maximum sum with kadanes algo is " + kadanes(arr));
+        System.out.println(buyAndSell(arr));
     }
 }
