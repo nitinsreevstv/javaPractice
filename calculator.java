@@ -14,7 +14,7 @@ public class calculator{
         sc.close();
         switch (ch) {
             case '+':
-                System.out.println(first + second);
+                System.out.println(first + (second));
                 break;
             case '-':
                 System.out.println(first - second);
